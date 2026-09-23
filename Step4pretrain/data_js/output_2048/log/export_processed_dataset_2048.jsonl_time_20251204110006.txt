@@ -1,0 +1,615 @@
+2025-12-04 11:00:06.972 | INFO     | data_juicer.config.config:init_setup_from_cfg:660 - dataset_path config is set and a valid local path
+2025-12-04 11:00:06.972 | WARNING  | data_juicer.config.config:init_setup_from_cfg:692 - Cache management of datasets is disabled.
+2025-12-04 11:00:06.972 | WARNING  | data_juicer.config.config:init_setup_from_cfg:700 - Disable cache compression due to disabled cache.
+2025-12-04 11:00:06.972 | WARNING  | data_juicer.config.config:init_setup_from_cfg:704 - Set temp directory to store temp files to [/root/autodl-tmp/data_js/.cache].
+2025-12-04 11:00:06.973 | WARNING  | data_juicer.config.config:init_setup_from_cfg:724 - Set dataset cache directory to /root/autodl-tmp/data_js/.cache using the ds_cache_dir argument, which is /root/.cache/huggingface/datasets before based on the env variable HF_DATASETS_CACHE.
+2025-12-04 11:00:06.973 | DEBUG    | data_juicer.config.config:timing_context:42 - Initializing setup from config took 0.02 seconds
+2025-12-04 11:00:07.419 | DEBUG    | data_juicer.config.config:timing_context:42 - Updating operator process took 0.45 seconds
+2025-12-04 11:00:07.419 | INFO     | data_juicer.config.config:config_backup:970 - Back up the input config file [/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/data_process_js_2048.yaml] into the work_dir [/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048]
+2025-12-04 11:00:07.456 | INFO     | data_juicer.config.config:display_config:991 - Configuration table: 
+╒══════════════════════════╤═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╕
+│ key                      │ values                                                                                                                  │
+╞══════════════════════════╪═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╡
+│ config                   │ [Path_fr(data_process_js_2048.yaml, cwd=/root/autodl-tmp/dingshixiong/pretrain_stage/data_js)]                          │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ auto                     │ False                                                                                                                   │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ auto_num                 │ 1000                                                                                                                    │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ hpo_config               │ None                                                                                                                    │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ data_probe_algo          │ 'uniform'                                                                                                               │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ data_probe_ratio         │ 1.0                                                                                                                     │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ project_name             │ 'llm_clean'                                                                                                             │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ executor_type            │ 'default'                                                                                                               │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ dataset_path             │ '/root/autodl-tmp/dingshixiong/pretrain_stage/prepare_data/formatted_data_2048'                                         │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ dataset                  │ []                                                                                                                      │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ generated_dataset_config │ None                                                                                                                    │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ validators               │ []                                                                                                                      │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ work_dir                 │ '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'                                                      │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_path              │ '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048/processed_dataset_2048.jsonl'                         │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_type              │ None                                                                                                                    │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_shard_size        │ 0                                                                                                                       │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_in_parallel       │ False                                                                                                                   │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_extra_args        │ {}                                                                                                                      │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ keep_stats_in_res_ds     │ False                                                                                                                   │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ keep_hashes_in_res_ds    │ False                                                                                                                   │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ np                       │ 32                                                                                                                      │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ text_keys                │ 'text'                                                                                                                  │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ image_key                │ 'images'                                                                                                                │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ image_bytes_key          │ 'image_bytes'                                                                                                           │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ image_special_token      │ '<__dj__image>'                                                                                                         │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ audio_key                │ 'audios'                                                                                                                │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ audio_special_token      │ '<__dj__audio>'                                                                                                         │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ video_key                │ 'videos'                                                                                                                │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ video_special_token      │ '<__dj__video>'                                                                                                         │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ eoc_special_token        │ '<|__dj__eoc|>'                                                                                                         │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ suffixes                 │ []                                                                                                                      │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ turbo                    │ False                                                                                                                   │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ skip_op_error            │ True                                                                                                                    │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_cache                │ False                                                                                                                   │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ds_cache_dir             │ '/root/autodl-tmp/data_js/.cache'                                                                                       │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ cache_compress           │ None                                                                                                                    │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_monitor             │ True                                                                                                                    │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_checkpoint           │ False                                                                                                                   │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ temp_dir                 │ '/root/autodl-tmp/data_js/.cache'                                                                                       │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_tracer              │ True                                                                                                                    │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_list_to_trace         │ []                                                                                                                      │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ trace_num                │ 10                                                                                                                      │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_insight_mining      │ False                                                                                                                   │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_list_to_mine          │ []                                                                                                                      │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_fusion                │ True                                                                                                                    │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ fusion_strategy          │ 'probe'                                                                                                                 │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ adaptive_batch_size      │ False                                                                                                                   │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ process                  │ [{'chinese_convert_mapper': {'accelerator': None,                                                                       │
+│                          │                              'audio_key': 'audios',                                                                     │
+│                          │                              'audio_special_token': '<__dj__audio>',                                                    │
+│                          │                              'cpu_required': 1,                                                                         │
+│                          │                              'eoc_special_token': '<|__dj__eoc|>',                                                      │
+│                          │                              'gpu_required': 0,                                                                         │
+│                          │                              'history_key': 'history',                                                                  │
+│                          │                              'image_bytes_key': 'image_bytes',                                                          │
+│                          │                              'image_key': 'images',                                                                     │
+│                          │                              'image_special_token': '<__dj__image>',                                                    │
+│                          │                              'index_key': None,                                                                         │
+│                          │                              'instruction_key': 'instruction',                                                          │
+│                          │                              'mem_required': 0,                                                                         │
+│                          │                              'mode': 't2s',                                                                             │
+│                          │                              'num_proc': 32,                                                                            │
+│                          │                              'prompt_key': 'prompt',                                                                    │
+│                          │                              'query_key': 'query',                                                                      │
+│                          │                              'response_key': 'response',                                                                │
+│                          │                              'skip_op_error': True,                                                                     │
+│                          │                              'system_key': 'system',                                                                    │
+│                          │                              'text_key': 'text',                                                                        │
+│                          │                              'turbo': False,                                                                            │
+│                          │                              'video_key': 'videos',                                                                     │
+│                          │                              'video_special_token': '<__dj__video>',                                                    │
+│                          │                              'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},          │
+│                          │  {'clean_email_mapper': {'accelerator': None,                                                                           │
+│                          │                          'audio_key': 'audios',                                                                         │
+│                          │                          'audio_special_token': '<__dj__audio>',                                                        │
+│                          │                          'cpu_required': 1,                                                                             │
+│                          │                          'eoc_special_token': '<|__dj__eoc|>',                                                          │
+│                          │                          'gpu_required': 0,                                                                             │
+│                          │                          'history_key': 'history',                                                                      │
+│                          │                          'image_bytes_key': 'image_bytes',                                                              │
+│                          │                          'image_key': 'images',                                                                         │
+│                          │                          'image_special_token': '<__dj__image>',                                                        │
+│                          │                          'index_key': None,                                                                             │
+│                          │                          'instruction_key': 'instruction',                                                              │
+│                          │                          'mem_required': 0,                                                                             │
+│                          │                          'num_proc': 32,                                                                                │
+│                          │                          'pattern': None,                                                                               │
+│                          │                          'prompt_key': 'prompt',                                                                        │
+│                          │                          'query_key': 'query',                                                                          │
+│                          │                          'repl': '',                                                                                    │
+│                          │                          'response_key': 'response',                                                                    │
+│                          │                          'skip_op_error': True,                                                                         │
+│                          │                          'system_key': 'system',                                                                        │
+│                          │                          'text_key': 'text',                                                                            │
+│                          │                          'turbo': False,                                                                                │
+│                          │                          'video_key': 'videos',                                                                         │
+│                          │                          'video_special_token': '<__dj__video>',                                                        │
+│                          │                          'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},              │
+│                          │  {'clean_html_mapper': {'accelerator': None,                                                                            │
+│                          │                         'audio_key': 'audios',                                                                          │
+│                          │                         'audio_special_token': '<__dj__audio>',                                                         │
+│                          │                         'cpu_required': 1,                                                                              │
+│                          │                         'eoc_special_token': '<|__dj__eoc|>',                                                           │
+│                          │                         'gpu_required': 0,                                                                              │
+│                          │                         'history_key': 'history',                                                                       │
+│                          │                         'image_bytes_key': 'image_bytes',                                                               │
+│                          │                         'image_key': 'images',                                                                          │
+│                          │                         'image_special_token': '<__dj__image>',                                                         │
+│                          │                         'index_key': None,                                                                              │
+│                          │                         'instruction_key': 'instruction',                                                               │
+│                          │                         'mem_required': 0,                                                                              │
+│                          │                         'num_proc': 32,                                                                                 │
+│                          │                         'prompt_key': 'prompt',                                                                         │
+│                          │                         'query_key': 'query',                                                                           │
+│                          │                         'response_key': 'response',                                                                     │
+│                          │                         'skip_op_error': True,                                                                          │
+│                          │                         'system_key': 'system',                                                                         │
+│                          │                         'text_key': 'text',                                                                             │
+│                          │                         'turbo': False,                                                                                 │
+│                          │                         'video_key': 'videos',                                                                          │
+│                          │                         'video_special_token': '<__dj__video>',                                                         │
+│                          │                         'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},               │
+│                          │  {'clean_ip_mapper': {'accelerator': None,                                                                              │
+│                          │                       'audio_key': 'audios',                                                                            │
+│                          │                       'audio_special_token': '<__dj__audio>',                                                           │
+│                          │                       'cpu_required': 1,                                                                                │
+│                          │                       'eoc_special_token': '<|__dj__eoc|>',                                                             │
+│                          │                       'gpu_required': 0,                                                                                │
+│                          │                       'history_key': 'history',                                                                         │
+│                          │                       'image_bytes_key': 'image_bytes',                                                                 │
+│                          │                       'image_key': 'images',                                                                            │
+│                          │                       'image_special_token': '<__dj__image>',                                                           │
+│                          │                       'index_key': None,                                                                                │
+│                          │                       'instruction_key': 'instruction',                                                                 │
+│                          │                       'mem_required': 0,                                                                                │
+│                          │                       'num_proc': 32,                                                                                   │
+│                          │                       'pattern': None,                                                                                  │
+│                          │                       'prompt_key': 'prompt',                                                                           │
+│                          │                       'query_key': 'query',                                                                             │
+│                          │                       'repl': '',                                                                                       │
+│                          │                       'response_key': 'response',                                                                       │
+│                          │                       'skip_op_error': True,                                                                            │
+│                          │                       'system_key': 'system',                                                                           │
+│                          │                       'text_key': 'text',                                                                               │
+│                          │                       'turbo': False,                                                                                   │
+│                          │                       'video_key': 'videos',                                                                            │
+│                          │                       'video_special_token': '<__dj__video>',                                                           │
+│                          │                       'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},                 │
+│                          │  {'clean_links_mapper': {'accelerator': None,                                                                           │
+│                          │                          'audio_key': 'audios',                                                                         │
+│                          │                          'audio_special_token': '<__dj__audio>',                                                        │
+│                          │                          'cpu_required': 1,                                                                             │
+│                          │                          'eoc_special_token': '<|__dj__eoc|>',                                                          │
+│                          │                          'gpu_required': 0,                                                                             │
+│                          │                          'history_key': 'history',                                                                      │
+│                          │                          'image_bytes_key': 'image_bytes',                                                              │
+│                          │                          'image_key': 'images',                                                                         │
+│                          │                          'image_special_token': '<__dj__image>',                                                        │
+│                          │                          'index_key': None,                                                                             │
+│                          │                          'instruction_key': 'instruction',                                                              │
+│                          │                          'mem_required': 0,                                                                             │
+│                          │                          'num_proc': 32,                                                                                │
+│                          │                          'pattern': None,                                                                               │
+│                          │                          'prompt_key': 'prompt',                                                                        │
+│                          │                          'query_key': 'query',                                                                          │
+│                          │                          'repl': '',                                                                                    │
+│                          │                          'response_key': 'response',                                                                    │
+│                          │                          'skip_op_error': True,                                                                         │
+│                          │                          'system_key': 'system',                                                                        │
+│                          │                          'text_key': 'text',                                                                            │
+│                          │                          'turbo': False,                                                                                │
+│                          │                          'video_key': 'videos',                                                                         │
+│                          │                          'video_special_token': '<__dj__video>',                                                        │
+│                          │                          'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},              │
+│                          │  {'clean_copyright_mapper': {'accelerator': None,                                                                       │
+│                          │                              'audio_key': 'audios',                                                                     │
+│                          │                              'audio_special_token': '<__dj__audio>',                                                    │
+│                          │                              'cpu_required': 1,                                                                         │
+│                          │                              'eoc_special_token': '<|__dj__eoc|>',                                                      │
+│                          │                              'gpu_required': 0,                                                                         │
+│                          │                              'history_key': 'history',                                                                  │
+│                          │                              'image_bytes_key': 'image_bytes',                                                          │
+│                          │                              'image_key': 'images',                                                                     │
+│                          │                              'image_special_token': '<__dj__image>',                                                    │
+│                          │                              'index_key': None,                                                                         │
+│                          │                              'instruction_key': 'instruction',                                                          │
+│                          │                              'mem_required': 0,                                                                         │
+│                          │                              'num_proc': 32,                                                                            │
+│                          │                              'prompt_key': 'prompt',                                                                    │
+│                          │                              'query_key': 'query',                                                                      │
+│                          │                              'response_key': 'response',                                                                │
+│                          │                              'skip_op_error': True,                                                                     │
+│                          │                              'system_key': 'system',                                                                    │
+│                          │                              'text_key': 'text',                                                                        │
+│                          │                              'turbo': False,                                                                            │
+│                          │                              'video_key': 'videos',                                                                     │
+│                          │                              'video_special_token': '<__dj__video>',                                                    │
+│                          │                              'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},          │
+│                          │  {'fix_unicode_mapper': {'accelerator': None,                                                                           │
+│                          │                          'audio_key': 'audios',                                                                         │
+│                          │                          'audio_special_token': '<__dj__audio>',                                                        │
+│                          │                          'cpu_required': 1,                                                                             │
+│                          │                          'eoc_special_token': '<|__dj__eoc|>',                                                          │
+│                          │                          'gpu_required': 0,                                                                             │
+│                          │                          'history_key': 'history',                                                                      │
+│                          │                          'image_bytes_key': 'image_bytes',                                                              │
+│                          │                          'image_key': 'images',                                                                         │
+│                          │                          'image_special_token': '<__dj__image>',                                                        │
+│                          │                          'index_key': None,                                                                             │
+│                          │                          'instruction_key': 'instruction',                                                              │
+│                          │                          'mem_required': 0,                                                                             │
+│                          │                          'normalization': None,                                                                         │
+│                          │                          'num_proc': 32,                                                                                │
+│                          │                          'prompt_key': 'prompt',                                                                        │
+│                          │                          'query_key': 'query',                                                                          │
+│                          │                          'response_key': 'response',                                                                    │
+│                          │                          'skip_op_error': True,                                                                         │
+│                          │                          'system_key': 'system',                                                                        │
+│                          │                          'text_key': 'text',                                                                            │
+│                          │                          'turbo': False,                                                                                │
+│                          │                          'video_key': 'videos',                                                                         │
+│                          │                          'video_special_token': '<__dj__video>',                                                        │
+│                          │                          'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},              │
+│                          │  {'whitespace_normalization_mapper': {'accelerator': None,                                                              │
+│                          │                                       'audio_key': 'audios',                                                            │
+│                          │                                       'audio_special_token': '<__dj__audio>',                                           │
+│                          │                                       'cpu_required': 1,                                                                │
+│                          │                                       'eoc_special_token': '<|__dj__eoc|>',                                             │
+│                          │                                       'gpu_required': 0,                                                                │
+│                          │                                       'history_key': 'history',                                                         │
+│                          │                                       'image_bytes_key': 'image_bytes',                                                 │
+│                          │                                       'image_key': 'images',                                                            │
+│                          │                                       'image_special_token': '<__dj__image>',                                           │
+│                          │                                       'index_key': None,                                                                │
+│                          │                                       'instruction_key': 'instruction',                                                 │
+│                          │                                       'mem_required': 0,                                                                │
+│                          │                                       'num_proc': 32,                                                                   │
+│                          │                                       'prompt_key': 'prompt',                                                           │
+│                          │                                       'query_key': 'query',                                                             │
+│                          │                                       'response_key': 'response',                                                       │
+│                          │                                       'skip_op_error': True,                                                            │
+│                          │                                       'system_key': 'system',                                                           │
+│                          │                                       'text_key': 'text',                                                               │
+│                          │                                       'turbo': False,                                                                   │
+│                          │                                       'video_key': 'videos',                                                            │
+│                          │                                       'video_special_token': '<__dj__video>',                                           │
+│                          │                                       'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}}, │
+│                          │  {'character_repetition_filter': {'accelerator': None,                                                                  │
+│                          │                                   'audio_key': 'audios',                                                                │
+│                          │                                   'audio_special_token': '<__dj__audio>',                                               │
+│                          │                                   'cpu_required': 1,                                                                    │
+│                          │                                   'eoc_special_token': '<|__dj__eoc|>',                                                 │
+│                          │                                   'gpu_required': 0,                                                                    │
+│                          │                                   'history_key': 'history',                                                             │
+│                          │                                   'image_bytes_key': 'image_bytes',                                                     │
+│                          │                                   'image_key': 'images',                                                                │
+│                          │                                   'image_special_token': '<__dj__image>',                                               │
+│                          │                                   'index_key': None,                                                                    │
+│                          │                                   'instruction_key': 'instruction',                                                     │
+│                          │                                   'max_closed_interval': True,                                                          │
+│                          │                                   'max_ratio': 0.4,                                                                     │
+│                          │                                   'mem_required': 0,                                                                    │
+│                          │                                   'min_closed_interval': True,                                                          │
+│                          │                                   'min_ratio': 0.0,                                                                     │
+│                          │                                   'num_proc': 32,                                                                       │
+│                          │                                   'prompt_key': 'prompt',                                                               │
+│                          │                                   'query_key': 'query',                                                                 │
+│                          │                                   'rep_len': 10,                                                                        │
+│                          │                                   'response_key': 'response',                                                           │
+│                          │                                   'reversed_range': False,                                                              │
+│                          │                                   'skip_op_error': True,                                                                │
+│                          │                                   'stats_export_path': None,                                                            │
+│                          │                                   'system_key': 'system',                                                               │
+│                          │                                   'text_key': 'text',                                                                   │
+│                          │                                   'turbo': False,                                                                       │
+│                          │                                   'video_key': 'videos',                                                                │
+│                          │                                   'video_special_token': '<__dj__video>',                                               │
+│                          │                                   'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},     │
+│                          │  {'average_line_length_filter': {'accelerator': None,                                                                   │
+│                          │                                  'audio_key': 'audios',                                                                 │
+│                          │                                  'audio_special_token': '<__dj__audio>',                                                │
+│                          │                                  'cpu_required': 1,                                                                     │
+│                          │                                  'eoc_special_token': '<|__dj__eoc|>',                                                  │
+│                          │                                  'gpu_required': 0,                                                                     │
+│                          │                                  'history_key': 'history',                                                              │
+│                          │                                  'image_bytes_key': 'image_bytes',                                                      │
+│                          │                                  'image_key': 'images',                                                                 │
+│                          │                                  'image_special_token': '<__dj__image>',                                                │
+│                          │                                  'index_key': None,                                                                     │
+│                          │                                  'instruction_key': 'instruction',                                                      │
+│                          │                                  'max_closed_interval': True,                                                           │
+│                          │                                  'max_len': 2500,                                                                       │
+│                          │                                  'mem_required': 0,                                                                     │
+│                          │                                  'min_closed_interval': True,                                                           │
+│                          │                                  'min_len': 10,                                                                         │
+│                          │                                  'num_proc': 32,                                                                        │
+│                          │                                  'prompt_key': 'prompt',                                                                │
+│                          │                                  'query_key': 'query',                                                                  │
+│                          │                                  'response_key': 'response',                                                            │
+│                          │                                  'reversed_range': False,                                                               │
+│                          │                                  'skip_op_error': True,                                                                 │
+│                          │                                  'stats_export_path': None,                                                             │
+│                          │                                  'system_key': 'system',                                                                │
+│                          │                                  'text_key': 'text',                                                                    │
+│                          │                                  'turbo': False,                                                                        │
+│                          │                                  'video_key': 'videos',                                                                 │
+│                          │                                  'video_special_token': '<__dj__video>',                                                │
+│                          │                                  'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},      │
+│                          │  {'maximum_line_length_filter': {'accelerator': None,                                                                   │
+│                          │                                  'audio_key': 'audios',                                                                 │
+│                          │                                  'audio_special_token': '<__dj__audio>',                                                │
+│                          │                                  'cpu_required': 1,                                                                     │
+│                          │                                  'eoc_special_token': '<|__dj__eoc|>',                                                  │
+│                          │                                  'gpu_required': 0,                                                                     │
+│                          │                                  'history_key': 'history',                                                              │
+│                          │                                  'image_bytes_key': 'image_bytes',                                                      │
+│                          │                                  'image_key': 'images',                                                                 │
+│                          │                                  'image_special_token': '<__dj__image>',                                                │
+│                          │                                  'index_key': None,                                                                     │
+│                          │                                  'instruction_key': 'instruction',                                                      │
+│                          │                                  'max_closed_interval': True,                                                           │
+│                          │                                  'max_len': 2500,                                                                       │
+│                          │                                  'mem_required': 0,                                                                     │
+│                          │                                  'min_closed_interval': True,                                                           │
+│                          │                                  'min_len': 10,                                                                         │
+│                          │                                  'num_proc': 32,                                                                        │
+│                          │                                  'prompt_key': 'prompt',                                                                │
+│                          │                                  'query_key': 'query',                                                                  │
+│                          │                                  'response_key': 'response',                                                            │
+│                          │                                  'reversed_range': False,                                                               │
+│                          │                                  'skip_op_error': True,                                                                 │
+│                          │                                  'stats_export_path': None,                                                             │
+│                          │                                  'system_key': 'system',                                                                │
+│                          │                                  'text_key': 'text',                                                                    │
+│                          │                                  'turbo': False,                                                                        │
+│                          │                                  'video_key': 'videos',                                                                 │
+│                          │                                  'video_special_token': '<__dj__video>',                                                │
+│                          │                                  'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},      │
+│                          │  {'special_characters_filter': {'accelerator': None,                                                                    │
+│                          │                                 'audio_key': 'audios',                                                                  │
+│                          │                                 'audio_special_token': '<__dj__audio>',                                                 │
+│                          │                                 'cpu_required': 1,                                                                      │
+│                          │                                 'eoc_special_token': '<|__dj__eoc|>',                                                   │
+│                          │                                 'gpu_required': 0,                                                                      │
+│                          │                                 'history_key': 'history',                                                               │
+│                          │                                 'image_bytes_key': 'image_bytes',                                                       │
+│                          │                                 'image_key': 'images',                                                                  │
+│                          │                                 'image_special_token': '<__dj__image>',                                                 │
+│                          │                                 'index_key': None,                                                                      │
+│                          │                                 'instruction_key': 'instruction',                                                       │
+│                          │                                 'max_closed_interval': True,                                                            │
+│                          │                                 'max_ratio': 0.4,                                                                       │
+│                          │                                 'mem_required': 0,                                                                      │
+│                          │                                 'min_closed_interval': True,                                                            │
+│                          │                                 'min_ratio': 0.0,                                                                       │
+│                          │                                 'num_proc': 32,                                                                         │
+│                          │                                 'prompt_key': 'prompt',                                                                 │
+│                          │                                 'query_key': 'query',                                                                   │
+│                          │                                 'response_key': 'response',                                                             │
+│                          │                                 'reversed_range': False,                                                                │
+│                          │                                 'skip_op_error': True,                                                                  │
+│                          │                                 'stats_export_path': None,                                                              │
+│                          │                                 'system_key': 'system',                                                                 │
+│                          │                                 'text_key': 'text',                                                                     │
+│                          │                                 'turbo': False,                                                                         │
+│                          │                                 'video_key': 'videos',                                                                  │
+│                          │                                 'video_special_token': '<__dj__video>',                                                 │
+│                          │                                 'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},       │
+│                          │  {'text_length_filter': {'accelerator': None,                                                                           │
+│                          │                          'audio_key': 'audios',                                                                         │
+│                          │                          'audio_special_token': '<__dj__audio>',                                                        │
+│                          │                          'cpu_required': 1,                                                                             │
+│                          │                          'eoc_special_token': '<|__dj__eoc|>',                                                          │
+│                          │                          'gpu_required': 0,                                                                             │
+│                          │                          'history_key': 'history',                                                                      │
+│                          │                          'image_bytes_key': 'image_bytes',                                                              │
+│                          │                          'image_key': 'images',                                                                         │
+│                          │                          'image_special_token': '<__dj__image>',                                                        │
+│                          │                          'index_key': None,                                                                             │
+│                          │                          'instruction_key': 'instruction',                                                              │
+│                          │                          'max_closed_interval': True,                                                                   │
+│                          │                          'max_len': 10000,                                                                              │
+│                          │                          'mem_required': 0,                                                                             │
+│                          │                          'min_closed_interval': True,                                                                   │
+│                          │                          'min_len': 10,                                                                                 │
+│                          │                          'num_proc': 32,                                                                                │
+│                          │                          'prompt_key': 'prompt',                                                                        │
+│                          │                          'query_key': 'query',                                                                          │
+│                          │                          'response_key': 'response',                                                                    │
+│                          │                          'reversed_range': False,                                                                       │
+│                          │                          'skip_op_error': True,                                                                         │
+│                          │                          'stats_export_path': None,                                                                     │
+│                          │                          'system_key': 'system',                                                                        │
+│                          │                          'text_key': 'text',                                                                            │
+│                          │                          'turbo': False,                                                                                │
+│                          │                          'video_key': 'videos',                                                                         │
+│                          │                          'video_special_token': '<__dj__video>',                                                        │
+│                          │                          'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},              │
+│                          │  {'perplexity_filter': {'accelerator': None,                                                                            │
+│                          │                         'audio_key': 'audios',                                                                          │
+│                          │                         'audio_special_token': '<__dj__audio>',                                                         │
+│                          │                         'cpu_required': 1,                                                                              │
+│                          │                         'eoc_special_token': '<|__dj__eoc|>',                                                           │
+│                          │                         'gpu_required': 0,                                                                              │
+│                          │                         'history_key': 'history',                                                                       │
+│                          │                         'image_bytes_key': 'image_bytes',                                                               │
+│                          │                         'image_key': 'images',                                                                          │
+│                          │                         'image_special_token': '<__dj__image>',                                                         │
+│                          │                         'index_key': None,                                                                              │
+│                          │                         'instruction_key': 'instruction',                                                               │
+│                          │                         'lang': 'zh',                                                                                   │
+│                          │                         'max_closed_interval': True,                                                                    │
+│                          │                         'max_ppl': 3000,                                                                                │
+│                          │                         'mem_required': 0,                                                                              │
+│                          │                         'min_closed_interval': True,                                                                    │
+│                          │                         'min_ppl': 0,                                                                                   │
+│                          │                         'num_proc': 32,                                                                                 │
+│                          │                         'prompt_key': 'prompt',                                                                         │
+│                          │                         'query_key': 'query',                                                                           │
+│                          │                         'response_key': 'response',                                                                     │
+│                          │                         'reversed_range': False,                                                                        │
+│                          │                         'skip_op_error': True,                                                                          │
+│                          │                         'stats_export_path': None,                                                                      │
+│                          │                         'system_key': 'system',                                                                         │
+│                          │                         'text_key': 'text',                                                                             │
+│                          │                         'turbo': False,                                                                                 │
+│                          │                         'video_key': 'videos',                                                                          │
+│                          │                         'video_special_token': '<__dj__video>',                                                         │
+│                          │                         'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}},               │
+│                          │  {'document_minhash_deduplicator': {'accelerator': None,                                                                │
+│                          │                                     'audio_key': 'audios',                                                              │
+│                          │                                     'audio_special_token': '<__dj__audio>',                                             │
+│                          │                                     'cpu_required': 1,                                                                  │
+│                          │                                     'eoc_special_token': '<|__dj__eoc|>',                                               │
+│                          │                                     'gpu_required': 0,                                                                  │
+│                          │                                     'history_key': 'history',                                                           │
+│                          │                                     'ignore_pattern': None,                                                             │
+│                          │                                     'image_bytes_key': 'image_bytes',                                                   │
+│                          │                                     'image_key': 'images',                                                              │
+│                          │                                     'image_special_token': '<__dj__image>',                                             │
+│                          │                                     'index_key': None,                                                                  │
+│                          │                                     'instruction_key': 'instruction',                                                   │
+│                          │                                     'jaccard_threshold': 0.7,                                                           │
+│                          │                                     'lowercase': True,                                                                  │
+│                          │                                     'mem_required': 0,                                                                  │
+│                          │                                     'num_bands': None,                                                                  │
+│                          │                                     'num_permutations': 256,                                                            │
+│                          │                                     'num_proc': 32,                                                                     │
+│                          │                                     'num_rows_per_band': None,                                                          │
+│                          │                                     'prompt_key': 'prompt',                                                             │
+│                          │                                     'query_key': 'query',                                                               │
+│                          │                                     'response_key': 'response',                                                         │
+│                          │                                     'skip_op_error': True,                                                              │
+│                          │                                     'system_key': 'system',                                                             │
+│                          │                                     'text_key': 'text',                                                                 │
+│                          │                                     'tokenization': 'character',                                                        │
+│                          │                                     'tokenizer_model': None,                                                            │
+│                          │                                     'turbo': False,                                                                     │
+│                          │                                     'video_key': 'videos',                                                              │
+│                          │                                     'video_special_token': '<__dj__video>',                                             │
+│                          │                                     'window_size': 5,                                                                   │
+│                          │                                     'work_dir': '/root/autodl-tmp/dingshixiong/pretrain_stage/data_js/output_2048'}}]   │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ percentiles              │ []                                                                                                                      │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_original_dataset  │ False                                                                                                                   │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ save_stats_in_one_file   │ True                                                                                                                    │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ray_address              │ 'auto'                                                                                                                  │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ custom_operator_paths    │ None                                                                                                                    │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ debug                    │ False                                                                                                                   │
+╘══════════════════════════╧═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╛
+2025-12-04 11:00:07.459 | DEBUG    | data_juicer.config.config:timing_context:42 - Total config initialization time took 1.41 seconds
+2025-12-04 11:00:07.459 | INFO     | data_juicer.tools.process_data:timing_context:15 - Loading configuration took 1.41 seconds
+2025-12-04 11:00:07.461 | WARNING  | data_juicer.utils.resource_utils:query_cuda_info:44 - Command nvidia-smi is not found. There might be no GPUs on this machine.
+2025-12-04 11:00:07.465 | INFO     | data_juicer.core.executor.default_executor:__init__:58 - Setting up dataset builder...
+2025-12-04 11:00:07.465 | INFO     | data_juicer.core.data.dataset_builder:__init__:48 - found dataset_path setting: /root/autodl-tmp/dingshixiong/pretrain_stage/prepare_data/formatted_data_2048
+2025-12-04 11:00:07.466 | INFO     | data_juicer.core.data.load_strategy:get_strategy_class:83 - Getting strategy class for exec: default, data_type: local, data_source: None
+2025-12-04 11:00:07.466 | INFO     | data_juicer.core.executor.default_executor:__init__:74 - Preparing exporter...
+2025-12-04 11:00:07.466 | INFO     | data_juicer.core.executor.default_executor:__init__:89 - Preparing tracer...
+2025-12-04 11:00:07.466 | INFO     | data_juicer.core.tracer:__init__:33 - Trace for all ops.
+2025-12-04 11:00:07.466 | INFO     | data_juicer.tools.process_data:timing_context:15 - Initializing executor took 0.01 seconds
+2025-12-04 11:00:07.466 | INFO     | data_juicer.core.executor.default_executor:run:115 - Loading dataset from dataset builder...
+Generating jsonl split: 0 examples [00:00, ? examples/s]Generating jsonl split: 4786 examples [00:00, 25858.31 examples/s]Generating jsonl split: 55177 examples [00:00, 219082.14 examples/s]Generating jsonl split: 126690 examples [00:00, 387058.47 examples/s]Generating jsonl split: 179269 examples [00:00, 418348.85 examples/s]Generating jsonl split: 235104 examples [00:00, 459968.34 examples/s]Generating jsonl split: 292834 examples [00:00, 489479.46 examples/s]Generating jsonl split: 360430 examples [00:00, 500131.63 examples/s]Generating jsonl split: 423725 examples [00:00, 507929.88 examples/s]Generating jsonl split: 490026 examples [00:01, 526924.64 examples/s]Generating jsonl split: 554776 examples [00:01, 534827.66 examples/s]Generating jsonl split: 611971 examples [00:01, 442421.56 examples/s]Generating jsonl split: 663192 examples [00:01, 361749.62 examples/s]Generating jsonl split: 705257 examples [00:01, 273059.24 examples/s]Generating jsonl split: 740858 examples [00:02, 180198.53 examples/s]Generating jsonl split: 766117 examples [00:02, 146332.59 examples/s]Generating jsonl split: 786613 examples [00:02, 131296.70 examples/s]Generating jsonl split: 807440 examples [00:03, 117223.68 examples/s]Generating jsonl split: 822886 examples [00:03, 110848.21 examples/s]Generating jsonl split: 838522 examples [00:03, 105254.31 examples/s]Generating jsonl split: 853737 examples [00:03, 98100.56 examples/s] Generating jsonl split: 860926 examples [00:03, 226435.96 examples/s]
+2025-12-04 11:00:12.428 | INFO     | data_juicer.format.formatter:unify_format:174 - Unifying the input dataset formats...
+2025-12-04 11:00:12.429 | INFO     | data_juicer.format.formatter:unify_format:191 - There are 860926 sample(s) in the original dataset.
+Filter (num_proc=32):   0%|          | 0/860926 [00:00<?, ? examples/s]Filter (num_proc=32):   0%|          | 2000/860926 [00:00<02:58, 4820.75 examples/s]Filter (num_proc=32):   2%|1         | 14000/860926 [00:00<00:24, 34119.83 examples/s]Filter (num_proc=32):  17%|#6        | 146000/860926 [00:00<00:01, 375468.25 examples/s]Filter (num_proc=32):  31%|###1      | 271000/860926 [00:00<00:00, 610503.14 examples/s]Filter (num_proc=32):  45%|####4     | 387000/860926 [00:00<00:00, 759329.99 examples/s]Filter (num_proc=32):  59%|#####8    | 504000/860926 [00:00<00:00, 868704.45 examples/s]Filter (num_proc=32):  73%|#######3  | 630904/860926 [00:01<00:00, 972835.16 examples/s]Filter (num_proc=32):  86%|########5 | 740040/860926 [00:01<00:00, 976398.07 examples/s]Filter (num_proc=32):  98%|#########8| 845888/860926 [00:01<00:00, 831977.44 examples/s]Filter (num_proc=32): 100%|##########| 860926/860926 [00:01<00:00, 554728.01 examples/s]
+2025-12-04 11:00:14.088 | INFO     | data_juicer.format.formatter:unify_format:203 - 860926 samples left after filtering empty text.
+2025-12-04 11:00:14.098 | INFO     | data_juicer.core.executor.default_executor:run:121 - Preparing process operators...
+2025-12-04 11:00:14.099 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading opencc...
+2025-12-04 11:00:14.106 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:641 - Loading sentencepiece model...
+2025-12-04 11:00:14.107 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading sentencepiece...
+2025-12-04 11:00:14.197 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:497 - Loading kenlm language model...
+2025-12-04 11:00:14.198 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading kenlm...
+2025-12-04 11:00:14.771 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading scipy.integrate...
+2025-12-04 11:00:14.863 | INFO     | data_juicer.core.executor.default_executor:run:128 - Probe the OP speed for OP reordering...
+2025-12-04 11:00:14.869 | DEBUG    | data_juicer.utils.process_utils:setup_mp:34 - Setting multiprocess start method to 'fork'
+2025-12-04 11:00:14.870 | INFO     | data_juicer.utils.process_utils:calculate_np:115 - Set the auto `num_proc` to 127 of Op[chinese_convert_mapper] based on the required memory: 0GB and required cpu: 1.
+2025-12-04 11:00:14.870 | DEBUG    | data_juicer.ops.base_op:runtime_np:234 - Op [chinese_convert_mapper] running with number of procs:32
+2025-12-04 11:00:15.518 | INFO     | data_juicer.utils.process_utils:calculate_np:115 - Set the auto `num_proc` to 127 of Op[chinese_convert_mapper] based on the required memory: 0GB and required cpu: 1.
+2025-12-04 11:00:15.519 | DEBUG    | data_juicer.ops.base_op:runtime_np:234 - Op [chinese_convert_mapper] running with number of procs:32
+chinese_convert_mapper_process (num_proc=32):   0%|          | 0/32000 [00:00<?, ? examples/s]chinese_convert_mapper_process (num_proc=32):   3%|3         | 1000/32000 [00:01<00:47, 658.14 examples/s]chinese_convert_mapper_process (num_proc=32):  12%|#2        | 4000/32000 [00:01<00:09, 3101.05 examples/s]chinese_convert_mapper_process (num_proc=32):  25%|##5       | 8000/32000 [00:01<00:03, 6959.66 examples/s]chinese_convert_mapper_process (num_proc=32):  41%|####      | 13000/32000 [00:01<00:01, 12478.63 examples/s]chinese_convert_mapper_process (num_proc=32):  53%|#####3    | 17000/32000 [00:02<00:00, 15210.80 examples/s]chinese_convert_mapper_process (num_proc=32):  66%|######5   | 21000/32000 [00:02<00:00, 18829.27 examples/s]chinese_convert_mapper_process (num_proc=32):  78%|#######8  | 25000/32000 [00:02<00:00, 21240.34 examples/s]chinese_convert_mapper_process (num_proc=32):  91%|######### | 29000/32000 [00:02<00:00, 23364.60 examples/s]chinese_convert_mapper_process (num_proc=32): 100%|##########| 32000/32000 [00:02<00:00, 11819.28 examples/s]
+2025-12-04 11:00:22.848 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading torch...
+2025-12-04 11:00:23.230 | DEBUG    | data_juicer.utils.process_utils:setup_mp:34 - Setting multiprocess start method to 'fork'
+2025-12-04 11:00:23.231 | INFO     | data_juicer.utils.process_utils:calculate_np:115 - Set the auto `num_proc` to 127 of Op[clean_email_mapper] based on the required memory: 0GB and required cpu: 1.
+2025-12-04 11:00:23.232 | DEBUG    | data_juicer.ops.base_op:runtime_np:234 - Op [clean_email_mapper] running with number of procs:32
+2025-12-04 11:00:23.709 | INFO     | data_juicer.utils.process_utils:calculate_np:115 - Set the auto `num_proc` to 127 of Op[clean_email_mapper] based on the required memory: 0GB and required cpu: 1.
+2025-12-04 11:00:23.711 | DEBUG    | data_juicer.ops.base_op:runtime_np:234 - Op [clean_email_mapper] running with number of procs:32
+clean_email_mapper_process (num_proc=32):   0%|          | 0/32000 [00:00<?, ? examples/s]clean_email_mapper_process (num_proc=32):   3%|3         | 1000/32000 [00:00<00:22, 1354.52 examples/s]clean_email_mapper_process (num_proc=32):   6%|6         | 2000/32000 [00:00<00:11, 2537.83 examples/s]clean_email_mapper_process (num_proc=32):  12%|#2        | 4000/32000 [00:01<00:05, 5285.19 examples/s]clean_email_mapper_process (num_proc=32):  19%|#8        | 6000/32000 [00:01<00:03, 7441.43 examples/s]clean_email_mapper_process (num_proc=32):  25%|##5       | 8000/32000 [00:01<00:02, 9793.76 examples/s]clean_email_mapper_process (num_proc=32):  31%|###1      | 10000/32000 [00:01<00:01, 11944.72 examples/s]clean_email_mapper_process (num_proc=32):  66%|######5   | 21000/32000 [00:01<00:00, 34102.24 examples/s]clean_email_mapper_process (num_proc=32):  81%|########1 | 26000/32000 [00:01<00:00, 31687.93 examples/s]clean_email_mapper_process (num_proc=32):  94%|#########3| 30000/32000 [00:01<00:00, 33105.27 examples/s]clean_email_mapper_process (num_proc=32): 100%|##########| 32000/32000 [00:02<00:00, 15718.84 examples/s]
+2025-12-04 11:00:30.486 | DEBUG    | data_juicer.utils.process_utils:setup_mp:34 - Setting multiprocess start method to 'fork'
+2025-12-04 11:00:30.488 | INFO     | data_juicer.utils.process_utils:calculate_np:115 - Set the auto `num_proc` to 127 of Op[clean_html_mapper] based on the required memory: 0GB and required cpu: 1.
+2025-12-04 11:00:30.488 | DEBUG    | data_juicer.ops.base_op:runtime_np:234 - Op [clean_html_mapper] running with number of procs:32
+2025-12-04 11:00:30.975 | INFO     | data_juicer.utils.process_utils:calculate_np:115 - Set the auto `num_proc` to 127 of Op[clean_html_mapper] based on the required memory: 0GB and required cpu: 1.
+2025-12-04 11:00:30.977 | DEBUG    | data_juicer.ops.base_op:runtime_np:234 - Op [clean_html_mapper] running with number of procs:32
+clean_html_mapper_process (num_proc=32):   0%|          | 0/32000 [00:00<?, ? examples/s]2025-12-04 11:00:35.820 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:35.827 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:35.845 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:35.885 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+clean_html_mapper_process (num_proc=32):   3%|3         | 1000/32000 [00:00<00:28, 1095.52 examples/s]2025-12-04 11:00:35.906 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:35.978 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+clean_html_mapper_process (num_proc=32):   6%|6         | 2000/32000 [00:01<00:13, 2293.37 examples/s]2025-12-04 11:00:36.011 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.032 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.066 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.101 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.127 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+clean_html_mapper_process (num_proc=32):  12%|#2        | 4000/32000 [00:01<00:05, 4899.49 examples/s]2025-12-04 11:00:36.157 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.191 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.227 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.256 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+clean_html_mapper_process (num_proc=32):  19%|#8        | 6000/32000 [00:01<00:03, 7347.19 examples/s]2025-12-04 11:00:36.296 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.324 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.360 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.393 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+clean_html_mapper_process (num_proc=32):  25%|##5       | 8000/32000 [00:01<00:02, 8891.08 examples/s]2025-12-04 11:00:36.422 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.434 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.469 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.528 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+clean_html_mapper_process (num_proc=32):  69%|######8   | 22000/32000 [00:01<00:00, 33301.61 examples/s]2025-12-04 11:00:36.565 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.607 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.630 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.664 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.699 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+clean_html_mapper_process (num_proc=32):  84%|########4 | 27000/32000 [00:01<00:00, 30655.94 examples/s]2025-12-04 11:00:36.738 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.776 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.830 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+2025-12-04 11:00:36.868 | DEBUG    | data_juicer.utils.lazy_loader:_load:406 - Loading selectolax...
+clean_html_mapper_process (num_proc=32):  97%|#########6| 31000/32000 [00:01<00:00, 28691.33 examples/s]clean_html_mapper_process (num_proc=32): 100%|##########| 32000/32000 [00:02<00:00, 14831.69 examples/s]
+2025-12-04 11:00:37.712 | DEBUG    | data_juicer.utils.process_utils:setup_mp:34 - Setting multiprocess start method to 'fork'
+2025-12-04 11:00:37.714 | INFO     | data_juicer.utils.process_utils:calculate_np:115 - Set the auto `num_proc` to 127 of Op[clean_ip_mapper] based on the required memory: 0GB and required cpu: 1.
+2025-12-04 11:00:37.715 | DEBUG    | data_juicer.ops.base_op:runtime_np:234 - Op [clean_ip_mapper] running with number of procs:32
+2025-12-04 11:00:38.019 | INFO     | data_juicer.utils.process_utils:calculate_np:115 - Set the auto `num_proc` to 127 of Op[clean_ip_mapper] based on the required memory: 0GB and required cpu: 1.
+2025-12-04 11:00:38.020 | DEBUG    | data_juicer.ops.base_op:runtime_np:234 - Op [clean_ip_mapper] running with number of procs:32
+clean_ip_mapper_process (num_proc=32):   0%|          | 0/32000 [00:00<?, ? examples/s]
