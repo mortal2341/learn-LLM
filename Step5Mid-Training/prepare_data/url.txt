@@ -1,0 +1,20 @@
+# 预训练 
+https://huggingface.co/datasets/pleisto/wikipedia-cn-20230720-filtered (wiki百科过滤, 25w)
+https://huggingface.co/datasets/fjcanyue/wikipedia-zh-cn (wiki百科中文，359w)
+https://huggingface.co/datasets/YeungNLP/firefly-train-1.1M (firefly指令数据，165w)
+https://huggingface.co/datasets/BelleGroup/train_2M_CN (BELLE对话数据，200w)
+
+# 中期训练新增数据
+https://huggingface.co/datasets/BAAI/Infinity-Instruct (代码+数学，10w)
+https://huggingface.co/datasets/Congliu/Chinese-DeepSeek-R1-Distill-data-110k (推理，11w)
+https://huggingface.co/datasets/opencsg/chinese-cosmopedia (textbooks，26w)
+
+# 全参SFT
+https://huggingface.co/datasets/Mxode/I_Wonder_Why-Chinese (中文百科开放问答，120w)
+https://huggingface.co/datasets/Mxode/Chinese-Instruct-Lite (高质量中文指令数据, 500w)
+https://huggingface.co/datasets/HuggingFaceTB/instruct-data-basics-smollm-H4 (自我认知数据，700)
+
+# 推理蒸馏
+https://huggingface.co/datasets/jinliuxi/deepseek_r1_zh (deepseek-r1蒸馏，28k)
+https://huggingface.co/datasets/Congliu/Chinese-DeepSeek-R1-Distill-data-110k (deepseek-r1蒸馏, 110k)
+https://huggingface.co/datasets/shareAI/Alpaca-Distill-R1-ZH (Alpaca-r1蒸馏, 10k)

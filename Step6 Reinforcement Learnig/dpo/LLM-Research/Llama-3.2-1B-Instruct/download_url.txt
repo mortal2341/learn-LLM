@@ -1,0 +1,3 @@
+https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct
+或者：
+https://modelscope.cn/models/LLM-Research/Llama-3.2-1B-Instruct

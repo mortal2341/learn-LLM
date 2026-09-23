@@ -1,0 +1,607 @@
+# ============================================================
+#  learn-LLM  .gitignore
+#  收录范围：代码 / 配置 / 文档 / Notebook / 第三方依赖源码 / 小型样例
+#  排除范围：数据集与语料、模型权重与分词器产物、日志、缓存、敏感信息
+#
+#  维护约定：
+#   1) 通用规则见下方各段落（缓存 / 日志 / 权重 / 数据集目录 等）；
+#   2) 体积 >= 1MB 的数据 / 日志 / 分词器产物，按精确路径登记在
+#      文件末尾「按体积排除的文件」段落；
+#   3) 被排除资产的体积清单见 excluded_large_files.txt。
+# ============================================================
+
+# ---------- Python 缓存 / 字节码 ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.eggs/
+
+# ---------- 虚拟环境 / 依赖 ----------
+.venv/
+venv/
+env/
+ENV/
+node_modules/
+
+# ---------- 测试 / 类型检查 / Notebook 缓存 ----------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ---------- IDE ----------
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ---------- 敏感信息（切勿提交）----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---------- 日志与训练产物目录 ----------
+*.log
+log_*.txt
+logs/
+log/
+wandb/
+runs/
+outputs/
+
+# ---------- 模型权重 / 检查点 / 分词器产物 ----------
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+*.onnx
+
+# ---------- 压缩包 / 数组缓存 / 列式数据 ----------
+*.zip
+*.tar.gz
+*.tgz
+*.parquet
+*.npy
+*.npz
+
+# ---------- 数据集目录（体积大，按目录整体排除）----------
+# 例：Step0 pytorch/data/PetImages 下 25000 张猫狗图片（约 810 MB）
+# 说明：raw_data / sft_raw / think_raw / formatted_data_* 等语料目录
+#       不做整目录排除，以免连带丢掉目录内的 convert_wiki.py、
+#       README.md、*.png 等资产；这些目录中的大文件已由文件末尾
+#       「按体积排除」段落逐条覆盖。
+**/PetImages/
+
+# ============================================================
+#  按体积排除的文件
+#   A. >= 10MB：工作区中未跟踪的数据集与权重（196 个 / 约 108.74 GB）
+#   B. >=  1MB：已跟踪的数据 / 日志 / 分词器产物（见文件末尾）
+#  如需上传其中某个文件，删除对应行即可。
+# ============================================================
+
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/formatted_data_sft_2048/processed_chinese_instruct.jsonl
+/Step5Mid-Training/full_sft/data/processed_chinese_instruct_300w.jsonl
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/merged_phi4_sft/model-00001-of-00002.safetensors
+/Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/merged_phi4_sft/model-00002-of-00002.safetensors
+/Step6 Reinforcement Learnig/dpo/LLM-Research/Llama-3.2-1B-Instruct/original/consolidated.00.pth
+/Step6 Reinforcement Learnig/dpo/LLM-Research/Llama-3.2-1B-Instruct/model.safetensors
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/mid_training/data/processed_mid_train_80w.jsonl
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/raw_data/wikibaike/wikipedia-zh-cn-20250901.json
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/raw_data/wikibaike/wikipedia-zh-cn-20250901.json
+
+# --- Step4pretrain/ ---
+/Step4pretrain/data_js/output_2048/processed_dataset_2048.jsonl
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/data_js/output_2048/processed_dataset_2048.jsonl
+/Step5Mid-Training/mid_training/data/processed_dataset_2048.jsonl
+
+# --- Step4pretrain/ ---
+/Step4pretrain/data_js/output/processed_dataset_512.jsonl
+/Step4pretrain/train_llm/data/processed_dataset_512.jsonl
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/data_js/output/processed_dataset_512.jsonl
+
+# --- Step4pretrain/ ---
+/Step4pretrain/train_llm/data/processed_dataset_512_clean_230w.jsonl
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/mid_training/data/processed_dataset_512_clean_230w.jsonl
+/Step5Mid-Training/prepare_data/formatted_data_sft_2048/processed_baike_instruct.jsonl
+/Step5Mid-Training/full_sft/data/processed_baike_sft_120w.jsonl
+/Step5Mid-Training/full_sft/data/processed_baike_instruct.jsonl
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/raw_data/belle/train_2M_CN.json
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/raw_data/belle/train_2M_CN.json
+
+# --- Step4pretrain/ ---
+/Step4pretrain/custom_tokenizer/data/processed_dataset_512_sample_160w.jsonl
+/Step4pretrain/prepare_data/raw_data/text_books/00000.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/raw_data/text_books/00000.parquet
+/Step5Mid-Training/prepare_data/formatted_data_2048/processed_wiki_baike.jsonl
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/raw_data/firefly/firefly-train-1.1M.jsonl
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/raw_data/firefly/firefly-train-1.1M.jsonl
+
+# --- Step4pretrain/ ---
+/Step4pretrain/train_llm/data/processed_medical_mix.jsonl
+/Step4pretrain/prepare_data/raw_data/reasoning_110k/distill_r1_110k.jsonl
+/Step4pretrain/prepare_data/think_raw/reasoning_110k/distill_r1_110k.jsonl
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/raw_data/reasoning_110k/distill_r1_110k.jsonl
+/Step5Mid-Training/prepare_data/think_raw/reasoning_110k/distill_r1_110k.jsonl
+/Step5Mid-Training/qwen32b_cot/data/liucong/Chinese-DeepSeek-R1-Distill-data-110k/distill_r1_110k.jsonl
+
+# --- Step4pretrain/ ---
+/Step4pretrain/train_llm/data/train_encyclopedia.json
+/Step4pretrain/prepare_data/sft_raw/baike_instruct/general/train-1.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/baike_instruct/general/train-1.parquet
+/Step5Mid-Training/prepare_data/formatted_data_2048/processed_textbook.jsonl
+
+# --- Step0 pytorch/ ---
+/Step0 pytorch/data/en2cn/train_en.txt
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/baike_instruct/general/train.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/baike_instruct/general/train.parquet
+
+# --- Step0 pytorch/ ---
+/Step0 pytorch/data/en2cn/train_zh.txt
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/raw_data/wikibaike/wikipedia-cn-20230720-filtered_formatted.json
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/raw_data/wikibaike/wikipedia-cn-20230720-filtered_formatted.json
+
+# --- Step7RL/ ---
+/Step7RL/7.post_train-stage/grpo_medical/saved_lora_128/qwen_grpo_medical_reasoning_lora/adapter_model.safetensors
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/formatted_data_2048/processed_BELLE.jsonl
+
+# --- Step4pretrain/ ---
+/Step4pretrain/data_js/output/processed_dataset_512_stats.jsonl
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/data_js/output/processed_dataset_512_stats.jsonl
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-04.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-04.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-06.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-06.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-00.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-00.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-02.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-02.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-03.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-03.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-05.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-05.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-01.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-01.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-07.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-07.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/quality_model/bert-base-chinese/model.safetensors
+/Step4pretrain/quality_model/saved_model/best_bert_classifier.pth
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-09.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-09.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-11.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-11.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-15.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-15.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-08.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-08.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-12.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-12.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-10.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-10.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-13.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-13.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-14.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-14.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-16.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-16.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/train_llm/saved/continue_pretrain/cpt-qwen-0.1B/model.safetensors
+/Step4pretrain/train_llm/saved/pretrain/pretrain-qwen-0.1B/model.safetensors
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/full_sft/saved/full_sft/sft-baike-qwen-0.1B/model.safetensors
+/Step5Mid-Training/full_sft/saved/full_sft_plus/sft-plus-qwen-0.1B/model.safetensors
+/Step5Mid-Training/full_sft/saved/midtrain/midtrain-qwen-0.1B/model.safetensors
+/Step5Mid-Training/full_sft/saved/think/think-qwen-0.1B/model.safetensors
+/Step5Mid-Training/mid_training/saved/midtrain/midtrain-qwen-0.1B/model.safetensors
+/Step5Mid-Training/mid_training/saved/pretrain/pretrain-qwen-0.1B/model.safetensors
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/dpo_train/saved/dpo/dpo-qwen-0.1B/model.safetensors
+/Step6 Reinforcement Learnig/dpo_train/saved/full_sft_plus/sft-plus-qwen-0.1B/model.safetensors
+
+# --- Step7RL/ ---
+/Step7RL/7.post_train-stage/rlhf-ppo/saved/sft/sft-plus-qwen-0.1B/model.safetensors
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/dpo/checkpoint-300/optimizer.pt
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/dpo/checkpoint-312/optimizer.pt
+/Step6 Reinforcement Learnig/ad_text_gen/output/dpo-phi4-adgen/checkpoint-312/optimizer.pt
+/Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/checkpoint-1333/optimizer.pt
+/Step6 Reinforcement Learnig/ad_text_gen/swift_train/output/v3-20260113-130811/checkpoint-200/optimizer.pt
+/Step6 Reinforcement Learnig/ad_text_gen/swift_train/output/v3-20260113-130811/checkpoint-296/optimizer.pt
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/formatted_data_2048/processed_firefly.jsonl
+/Step5Mid-Training/prepare_data/formatted_data_2048/processed_reasoning.jsonl
+/Step5Mid-Training/full_sft/data/processed_distill_r1_7w.jsonl
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/think_raw/deepseek_r1_zh/sharegpt_transformed_chinese_regex.jsonl
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/think_raw/deepseek_r1_zh/sharegpt_transformed_chinese_regex.jsonl
+/Step5Mid-Training/prepare_data/formatted_data_think_2048/processed_reasoning_110k.jsonl
+
+# --- Step7RL/ ---
+/Step7RL/7.post_train-stage/grpo_medical/saved/qwen_grpo_medical_reasoning_lora/adapter_model.safetensors
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/code/train-02.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/code/train-02.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/code/train-01.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/code/train-01.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/code/train-03.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/code/train-03.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/code/train-00.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/code/train-00.parquet
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/dpo_train/data/iic/CValues-Comparison/train.jsonl
+
+# --- Step7RL/ ---
+/Step7RL/7.post_train-stage/rlhf-ppo/saved/value.pt
+/Step7RL/7.post_train-stage/rlhf-ppo/saved/rm.pt
+/Step7RL/7.post_train-stage/rlhf-ppo/saved/llm_aligned/model.safetensors
+/Step7RL/7.post_train-stage/rlhf-ppo/saved/llm_sft/model.safetensors
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/dpo/adapter_model.safetensors
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/dpo/checkpoint-300/adapter_model.safetensors
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/dpo/checkpoint-312/adapter_model.safetensors
+/Step6 Reinforcement Learnig/ad_text_gen/output/dpo-phi4-adgen/checkpoint-312/adapter_model.safetensors
+/Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/checkpoint-1333/adapter_model.safetensors
+/Step6 Reinforcement Learnig/ad_text_gen/swift_train/output/v3-20260113-130811/checkpoint-200/adapter_model.safetensors
+/Step6 Reinforcement Learnig/ad_text_gen/swift_train/output/v3-20260113-130811/checkpoint-296/adapter_model.safetensors
+
+# --- foundation/ ---
+/foundation/dataset/cifar-10-python.tar.gz
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/math/train-04.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/math/train-04.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/math/train-02.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/math/train-02.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/math/train-01.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/math/train-01.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/math/train-00.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/math/train-00.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/math/train-03.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/math/train-03.parquet
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/general/train-17.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/general/train-17.parquet
+
+# --- Step0 pytorch/ ---
+/Step0 pytorch/data/mnist_train.csv/mnist_train.csv
+
+# --- Step4pretrain/ ---
+/Step4pretrain/data_js/output_2048/processed_dataset_2048_stats.jsonl
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/data_js/output_2048/processed_dataset_2048_stats.jsonl
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/math/train-05.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/math/train-05.parquet
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/sft/checkpoint-300/optimizer.pt
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/sft/checkpoint-312/optimizer.pt
+/Step6 Reinforcement Learnig/dpo_train/data/dpo_train.jsonl
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/raw_data/code_math/train-00000-of-00015.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/raw_data/code_math/train-00000-of-00015.parquet
+/Step5Mid-Training/full_sft/data/sft_plus_train_test_30k.json
+
+# --- Step7RL/ ---
+/Step7RL/7.post_train-stage/grpo_medical/data/FreedomIntelligence/medical-o1-reasoning-SFT/medical_o1_sft_mix.json
+/Step7RL/7.post_train-stage/grpo_medical/data/FreedomIntelligence/medical-o1-reasoning-SFT/medical_o1_sft_mix_Chinese.json
+/Step7RL/7.post_train-stage/grpo_medical/data/FreedomIntelligence/medical-o1-reasoning-SFT/medical_o1_sft.json
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/formatted_data_2048/processed_code_math.jsonl
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/ad_text_gen/data/train_dpo_final.json
+/Step6 Reinforcement Learnig/dpo_train/data/iic/CValues-Comparison/test.jsonl
+/Step6 Reinforcement Learnig/ad_text_gen/data/train_dpo.json
+
+# --- Step7RL/ ---
+/Step7RL/7.post_train-stage/grpo_medical/data/FreedomIntelligence/medical-o1-reasoning-SFT/medical_o1_sft_Chinese.json
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/sft/adapter_model.safetensors
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/sft/checkpoint-300/adapter_model.safetensors
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/sft/checkpoint-312/adapter_model.safetensors
+
+# --- foundation/ ---
+/foundation/dataset/cifar-10-batches-py/data_batch_3
+/foundation/dataset/cifar-10-batches-py/data_batch_1
+/foundation/dataset/cifar-10-batches-py/data_batch_4
+/foundation/dataset/cifar-10-batches-py/data_batch_5
+/foundation/dataset/cifar-10-batches-py/test_batch
+/foundation/dataset/cifar-10-batches-py/data_batch_2
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/ad_text_gen/data/train-00000-of-00001-5924736d8b9825b5.parquet
+/Step6 Reinforcement Learnig/dpo_train/log/safe_dpo_dpo-qwen-0.1B.json
+
+# --- Step7RL/ ---
+/Step7RL/7.post_train-stage/rlhf-ppo/data/translated_human_like_data.json
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/ad_text_gen/data/dpo_test.jsonl
+/Step6 Reinforcement Learnig/dpo_train/data/dpo_test.jsonl
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/full_sft/data/sft_baike_test_12k.json
+
+# --- Step0 pytorch/ ---
+/Step0 pytorch/data/mnist_test.csv/mnist_test.csv
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/tabmwp/test.jsonl
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/dpo/tokenizer.json
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/dpo/checkpoint-300/tokenizer.json
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/dpo/checkpoint-312/tokenizer.json
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/sft/tokenizer.json
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/sft/checkpoint-300/tokenizer.json
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/saves/phi-4/lora/sft/checkpoint-312/tokenizer.json
+/Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/merged_phi4_sft/tokenizer.json
+/Step6 Reinforcement Learnig/ad_text_gen/swift_train/data_process/train_dpo_final_5k_for_swift.json
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/data/train_dpo_final_5k_for_llama.json
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/data/process_data/train_dpo_final_5k_for_llama.json
+
+# --- Step4pretrain/ ---
+/Step4pretrain/prepare_data/sft_raw/chinese_instruct_lite/code/train-04.parquet
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/prepare_data/sft_raw/chinese_instruct_lite/code/train-04.parquet
+/Step5Mid-Training/prepare_data/formatted_data_think_2048/processed_deepseek_r1_zh.jsonl
+
+# --- Step0 pytorch/ ---
+/Step0 pytorch/data/PetImages/Dog/Thumbs.db
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/data/train_sft_final_5k_for_llama.json
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/data/process_data/train_sft_final_5k_for_llama.json
+
+# --- Step4pretrain/ ---
+/Step4pretrain/custom_tokenizer/tokenizers/qwen3_tokenizer/tokenizer.json
+/Step4pretrain/train_llm/tokenizers/Qwen/Qwen3-0.6B/tokenizer.json
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/mid_training/data/midtrain_test_4k.json
+
+# ============================================================
+#  B. >= 1MB 的已跟踪数据 / 日志 / 分词器产物（61 个文件 / 226.5 MB）
+#     依据 git 索引生成，用于替代逐文件的人工维护。
+# ============================================================
+
+# --- Step4pretrain/ ---
+/Step4pretrain/train_llm/data/pretrain_test_1w.json
+/Step4pretrain/prepare_data/think_raw/distill_r1_zh/alpaca_r1_data_zh-localpost.json
+/Step4pretrain/train_llm/data/continue_train_test_6k.json
+/Step4pretrain/train_llm/saved/pretrain/pretrain-qwen-0.1B/tokenizer.json
+/Step4pretrain/train_llm/saved/continue_pretrain/cpt-qwen-0.1B/tokenizer.json
+/Step4pretrain/train_llm/tokenizers/merged_tokenizer/tokenizer.json
+/Step4pretrain/data_js/output/monitor/monitor.json
+/Step4pretrain/train_llm/tokenizers/Qwen/Qwen3-0.6B/vocab.json
+/Step4pretrain/custom_tokenizer/tokenizers/qwen3_tokenizer/vocab.json
+/Step4pretrain/custom_tokenizer/tokenizers/merged_tokenizer/tokenizer.json
+/Step4pretrain/train_llm/tokenizers/Qwen/Qwen3-0.6B/merges.txt
+/Step4pretrain/custom_tokenizer/tokenizers/qwen3_tokenizer/merges.txt
+/Step4pretrain/custom_tokenizer/tokenizers/gpt2_tokenizer/tokenizer.json
+/Step4pretrain/train_llm/log/ds_log.txt
+/Step4pretrain/train_llm/tokenizers/merged_tokenizer/vocab.json
+/Step4pretrain/custom_tokenizer/tokenizers/merged_tokenizer/vocab.json
+/Step4pretrain/data_js/output/log/export_processed_dataset_512.jsonl_time_20251117155140.txt
+
+# --- Step5Mid-Training/ ---
+/Step5Mid-Training/full_sft/log/full_sft_plus_instruct_log.txt
+/Step5Mid-Training/prepare_data/think_raw/distill_r1_zh/alpaca_r1_data_zh-localpost.json
+/Step5Mid-Training/prepare_data/formatted_data_think_2048/processed_distill_r1_zh.jsonl
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/math/train.jsonl
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/math_eval/gsm8k/test_qwen25-math-cot_-1_seed0_t0.0_s0_e-1.jsonl
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/models/Qwen/Qwen2___5-Math-7B/math_eval/gsm8k/test_qwen25-math-cot_-1_seed0_t0.0_s0_e-1.jsonl
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/models/Qwen/Qwen2.5-Math-7B/math_eval/gsm8k/test_qwen25-math-cot_-1_seed0_t0.0_s0_e-1.jsonl
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/math/test.jsonl
+/Step5Mid-Training/mid_training/saved/pretrain/pretrain-qwen-0.1B/tokenizer.json
+/Step5Mid-Training/mid_training/saved/midtrain/midtrain-qwen-0.1B/tokenizer.json
+/Step5Mid-Training/full_sft/saved/think/think-qwen-0.1B/tokenizer.json
+/Step5Mid-Training/full_sft/saved/midtrain/midtrain-qwen-0.1B/tokenizer.json
+/Step5Mid-Training/full_sft/saved/full_sft_plus/sft-plus-qwen-0.1B/tokenizer.json
+/Step5Mid-Training/full_sft/saved/full_sft/sft-baike-qwen-0.1B/tokenizer.json
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/gsm8k/train.jsonl
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/models/merged_qwen_math_7B/math_eval/gsm8k/test_qwen25-math-cot_-1_seed0_t0.0_s0_e-1.jsonl
+/Step5Mid-Training/mid_training/data/multifieldqa_zh.jsonl
+/Step5Mid-Training/full_sft/data/distill_r1_test_700.json
+/Step5Mid-Training/data_js/output/monitor/monitor.json
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/eval_rm_maj_example/math_cot_100.jsonl
+/Step5Mid-Training/full_sft/log/full_sft_baike_instruct_log.txt
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/olympiadbench/test.json
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/olympiadbench/test.jsonl
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/carp_en/test.jsonl
+/Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/college_math/test.jsonl
+/Step5Mid-Training/data_js/output/log/export_processed_dataset_512.jsonl_time_20251117155140.txt
+
+# --- Step6 Reinforcement Learnig/ ---
+/Step6 Reinforcement Learnig/dpo/LLM-Research/Llama-3.2-1B-Instruct/tokenizer.json
+/Step6 Reinforcement Learnig/ad_text_gen/swift_train/data_process/train_dpo_final_5k.json
+/Step6 Reinforcement Learnig/ad_text_gen/data/train_dpo_final_5k.json
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/data/process_data/train_dpo_final_5k.json
+/Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/checkpoint-1333/vocab.json
+/Step6 Reinforcement Learnig/ad_text_gen/output/dpo-phi4-adgen/checkpoint-312/vocab.json
+/Step6 Reinforcement Learnig/dpo_train/saved/full_sft_plus/sft-plus-qwen-0.1B/tokenizer.json
+/Step6 Reinforcement Learnig/dpo_train/saved/dpo/dpo-qwen-0.1B/tokenizer.json
+/Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/merged_phi4_sft/vocab.json
+/Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/merged_phi4_sft/merges.txt
+/Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/checkpoint-1333/merges.txt
+/Step6 Reinforcement Learnig/ad_text_gen/output/dpo-phi4-adgen/checkpoint-312/merges.txt
+/Step6 Reinforcement Learnig/dpo/raw_data/data/train-00000-of-00001.parquet
+/Step6 Reinforcement Learnig/dpo/LLM-Research/Llama-3.2-1B-Instruct/original/tokenizer.model
+/Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/data/dpo_en_demo.json
+/Step6 Reinforcement Learnig/ad_text_gen/data/test_dpo_final.json
+/Step6 Reinforcement Learnig/ad_text_gen/data/test_dpo.json
+
+# --- Step7RL/ ---
+/Step7RL/7.post_train-stage/rlhf-ppo/saved/sft/sft-plus-qwen-0.1B/tokenizer.json

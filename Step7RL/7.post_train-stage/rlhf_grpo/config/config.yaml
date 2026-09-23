@@ -1,0 +1,56 @@
+# GRPO分布式训练配置
+
+# 模型配置
+model:
+  model_path: "./Qwen/Qwen2.5-7B"   # 基础/参考模型名称或路径
+  # model_path: "./Qwen/Qwen2.5-3B"  # 基础/参考模型名称或路径
+  # model_path: "./Qwen/Qwen2.5-1.5B-Instruct"  # 基础/参考模型名称或路径
+  dtype: "bfloat16"
+
+# 数据配置
+data:
+  data_path: "openai/gsm8k"  # 数据集名称
+
+# 服务配置
+server:
+  ip: "http://localhost"  # 参考模型服务的ip
+  port: "8080"            # 参考模型服务的port
+
+# 采样配置
+sampling:
+    temperature: 0.9    # 采样温度
+    max_tokens: 700     # 最大输出token
+  
+# 训练配置
+training:
+    all_steps: 500            # 总共训练多少步
+    save_steps: 500           # 多少步保存一次模型
+    eval_steps: 20            # 多少步评估一次模型
+    log_steps: 5              # 日志打印间隔
+    Q_batch_size: 5           # 每次抽取多少个prompt来做rollout采样
+    num_pre_Q: 8              # 每一条prompt采样多少条answer
+    train_batch_size: 8       # grpo/gspo每一次更新batch size大小
+    eval_size: 100            # 测试集sample多少条数据出来做评估 
+    eval_batch_size: 10       # 测试评估用的batch size大小
+    gen_update_steps: 16      # 采样模型多少步更新一次
+    clip_param: 0.2           # GRPO clip ratio
+    beta: 0.04                # GRPO KL散度约束的beta系数
+    model_update_iter: 3      # 采样模型(旧策略)更新频率
+    use_gspo: false           # 是否启用GSPO
+    use_dapo: false           # 是否启用DAPO
+    clip_param_higher: 0.28   # DAPO clip higher
+    l_max: 1024               # L_Max for DAPO soft punishment
+    l_cache: 512              # L_cache for DAPO soft punishment
+
+# DeepSpeed配置
+deepspeed:
+  config_path: "./config/ds_config.json"  # DeepSpeed配置文件
+
+# GPU配置
+gpu:
+  gpu_memory_utilization: 0.5   # 采样GPU显存占用比例（可根据模型大小调整）
+  gen_device: 1                 # 采样进程使用的GPU
+
+# 检查点配置
+checkpoint:
+  ckpt_dir: "./saved"           # 模型保存路径 

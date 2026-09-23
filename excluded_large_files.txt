@@ -1,0 +1,83 @@
+# excluded_large_files.txt
+# learn-LLM 仓库「被排除的大体积资产」清单
+# 生成时间：2026-09-23
+#
+# 说明：以下资产仍保留在本地工作区，但不纳入 Git 版本控制。
+#       排除规则见 .gitignore；如需恢复某个文件，删除 .gitignore 中对应行即可。
+#
+# 合计排除：25287 个文件 / 1051.7 MB
+
+## 1. 数据集目录（整目录排除）
+Step0 pytorch/data/PetImages/	25000 files	809.5 MB	猫狗二分类图片数据集
+
+## 2. 列式数据 / 训练语料（*.parquet）
+	159 files	6.1 MB
+
+## 3. 训练日志与运行状态（*/log/）
+	57 files	25.8 MB
+
+## 4. 模型检查点（*.pt / *.pth）
+	13 files	0.2 MB
+
+## 5. 其他数据 / 分词器产物（210.0 MB，明细如下）
+     9.92 MB	Step4pretrain/train_llm/data/pretrain_test_1w.json
+     8.86 MB	Step4pretrain/prepare_data/think_raw/distill_r1_zh/alpaca_r1_data_zh-localpost.json
+     8.86 MB	Step5Mid-Training/prepare_data/think_raw/distill_r1_zh/alpaca_r1_data_zh-localpost.json
+     8.66 MB	Step6 Reinforcement Learnig/dpo/LLM-Research/Llama-3.2-1B-Instruct/tokenizer.json
+     6.98 MB	Step4pretrain/train_llm/data/continue_train_test_6k.json
+     6.79 MB	Step5Mid-Training/prepare_data/formatted_data_think_2048/processed_distill_r1_zh.jsonl
+     6.69 MB	Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/math/train.jsonl
+     6.02 MB	Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/data/process_data/train_dpo_final_5k.json
+     6.02 MB	Step6 Reinforcement Learnig/ad_text_gen/data/train_dpo_final_5k.json
+     6.02 MB	Step6 Reinforcement Learnig/ad_text_gen/swift_train/data_process/train_dpo_final_5k.json
+     5.56 MB	Step5Mid-Training/model_merging/Qwen2.5-Math-main/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/math_eval/gsm8k/test_qwen25-math-cot_-1_seed0_t0.0_s0_e-1.jsonl
+     5.01 MB	Step5Mid-Training/model_merging/Qwen2.5-Math-main/models/Qwen/Qwen2___5-Math-7B/math_eval/gsm8k/test_qwen25-math-cot_-1_seed0_t0.0_s0_e-1.jsonl
+     4.84 MB	Step5Mid-Training/model_merging/Qwen2.5-Math-main/models/Qwen/Qwen2.5-Math-7B/math_eval/gsm8k/test_qwen25-math-cot_-1_seed0_t0.0_s0_e-1.jsonl
+     4.49 MB	Step6 Reinforcement Learnig/ad_text_gen/output/dpo-phi4-adgen/checkpoint-312/vocab.json
+     4.49 MB	Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/checkpoint-1333/vocab.json
+     4.21 MB	Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/math/test.jsonl
+     4.05 MB	Step4pretrain/train_llm/saved/continue_pretrain/cpt-qwen-0.1B/tokenizer.json
+     4.05 MB	Step4pretrain/train_llm/saved/pretrain/pretrain-qwen-0.1B/tokenizer.json
+     4.05 MB	Step5Mid-Training/full_sft/saved/full_sft/sft-baike-qwen-0.1B/tokenizer.json
+     4.05 MB	Step5Mid-Training/full_sft/saved/full_sft_plus/sft-plus-qwen-0.1B/tokenizer.json
+     4.05 MB	Step5Mid-Training/full_sft/saved/midtrain/midtrain-qwen-0.1B/tokenizer.json
+     4.05 MB	Step5Mid-Training/full_sft/saved/think/think-qwen-0.1B/tokenizer.json
+     4.05 MB	Step5Mid-Training/mid_training/saved/midtrain/midtrain-qwen-0.1B/tokenizer.json
+     4.05 MB	Step5Mid-Training/mid_training/saved/pretrain/pretrain-qwen-0.1B/tokenizer.json
+     4.05 MB	Step6 Reinforcement Learnig/dpo_train/saved/dpo/dpo-qwen-0.1B/tokenizer.json
+     4.05 MB	Step6 Reinforcement Learnig/dpo_train/saved/full_sft_plus/sft-plus-qwen-0.1B/tokenizer.json
+     4.05 MB	Step7RL/7.post_train-stage/rlhf-ppo/saved/sft/sft-plus-qwen-0.1B/tokenizer.json
+     4.05 MB	Step4pretrain/train_llm/tokenizers/merged_tokenizer/tokenizer.json
+     4.04 MB	Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/gsm8k/train.jsonl
+     3.81 MB	Step5Mid-Training/model_merging/Qwen2.5-Math-main/models/merged_qwen_math_7B/math_eval/gsm8k/test_qwen25-math-cot_-1_seed0_t0.0_s0_e-1.jsonl
+     3.73 MB	Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/merged_phi4_sft/vocab.json
+     3.40 MB	Step5Mid-Training/mid_training/data/multifieldqa_zh.jsonl
+     2.89 MB	Step5Mid-Training/full_sft/data/distill_r1_test_700.json
+     2.69 MB	Step4pretrain/data_js/output/monitor/monitor.json
+     2.69 MB	Step5Mid-Training/data_js/output/monitor/monitor.json
+     2.65 MB	Step4pretrain/custom_tokenizer/tokenizers/qwen3_tokenizer/vocab.json
+     2.65 MB	Step4pretrain/train_llm/tokenizers/Qwen/Qwen3-0.6B/vocab.json
+     2.31 MB	Step6 Reinforcement Learnig/ad_text_gen/output/dpo-phi4-adgen/checkpoint-312/merges.txt
+     2.31 MB	Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/checkpoint-1333/merges.txt
+     2.31 MB	Step6 Reinforcement Learnig/ad_text_gen/output/phi-4-sft/merged_phi4_sft/merges.txt
+     2.08 MB	Step6 Reinforcement Learnig/dpo/LLM-Research/Llama-3.2-1B-Instruct/original/tokenizer.model
+     2.06 MB	Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/eval_rm_maj_example/math_cot_100.jsonl
+     2.04 MB	Step4pretrain/custom_tokenizer/tokenizers/merged_tokenizer/tokenizer.json
+     1.59 MB	Step4pretrain/custom_tokenizer/tokenizers/qwen3_tokenizer/merges.txt
+     1.59 MB	Step4pretrain/train_llm/tokenizers/Qwen/Qwen3-0.6B/merges.txt
+     1.51 MB	Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/olympiadbench/test.json
+     1.50 MB	Step6 Reinforcement Learnig/ad_text_gen/LlamaFactory-main/data/dpo_en_demo.json
+     1.42 MB	Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/olympiadbench/test.jsonl
+     1.29 MB	Step4pretrain/custom_tokenizer/tokenizers/gpt2_tokenizer/tokenizer.json
+     1.27 MB	Step6 Reinforcement Learnig/ad_text_gen/data/test_dpo_final.json
+     1.22 MB	Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/carp_en/test.jsonl
+     1.15 MB	Step6 Reinforcement Learnig/ad_text_gen/data/test_dpo.json
+     1.13 MB	Step5Mid-Training/model_merging/Qwen2.5-Math-main/evaluation/data/college_math/test.jsonl
+     1.04 MB	Step4pretrain/custom_tokenizer/tokenizers/merged_tokenizer/vocab.json
+     1.04 MB	Step4pretrain/train_llm/tokenizers/merged_tokenizer/vocab.json
+     0.28 MB	Step4pretrain/data_js/log_2048.txt
+     0.28 MB	Step5Mid-Training/data_js/log_2048.txt
+     0.04 MB	Step3 DeepSeek/mla_cache.npy
+
+## 排除项扩展名分布
+[('.jpg', 25000), ('.parquet', 159), ('.txt', 57), ('.json', 43), ('.jsonl', 13), ('.pt', 9), ('.pth', 4), ('.npy', 1), ('.model', 1)]
