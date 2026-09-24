@@ -605,3 +605,12 @@ outputs/
 
 # --- Step7RL/ ---
 /Step7RL/7.post_train-stage/rlhf-ppo/saved/sft/sft-plus-qwen-0.1B/tokenizer.json
+
+# --- Step5Mid-Training/qwen3_intent_slot_filling/ ---
+/Step5Mid-Training/qwen3_intent_slot_filling/data/raw_data.jsonl
+/Step5Mid-Training/qwen3_intent_slot_filling/output/lora_multi_gpu/checkpoint-1668/vocab.json
+/Step5Mid-Training/qwen3_intent_slot_filling/output/lora_multi_gpu/checkpoint-1668/merges.txt
+/Step5Mid-Training/qwen3_intent_slot_filling/output/lora_single_gpu/checkpoint-6670/vocab.json
+/Step5Mid-Training/qwen3_intent_slot_filling/output/lora_single_gpu/checkpoint-6670/merges.txt
+/Step5Mid-Training/qwen3_intent_slot_filling/output/multi_log.txt
+/Step5Mid-Training/qwen3_intent_slot_filling/output/running_states.json
