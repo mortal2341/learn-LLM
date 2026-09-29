@@ -620,3 +620,8 @@ outputs/
 # 仅放行该目录下的日志文件，保证仓库内路径与本地工程结构一致。
 !/Step7RL/7.post_train-stage/rlhf-ppo/log/
 !/Step7RL/7.post_train-stage/rlhf-ppo/log/*.log
+
+# --- 例外：rec 项目完整入库（含数据集缓存与运行产物） ---
+# 说明：用户明确要求 rec 目录整体上传。覆盖上方「模型权重 / 检查点」段落的 *.pt 通用排除规则。
+# rec/data/ml-100k/ 数据集与 rec/output/ 产物本就不在通用排除范围内，此处仅需放行模型权重。
+!/rec/output/*.pt
