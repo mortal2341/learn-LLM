@@ -614,3 +614,9 @@ outputs/
 /Step5Mid-Training/qwen3_intent_slot_filling/output/lora_single_gpu/checkpoint-6670/merges.txt
 /Step5Mid-Training/qwen3_intent_slot_filling/output/multi_log.txt
 /Step5Mid-Training/qwen3_intent_slot_filling/output/running_states.json
+
+# --- 例外：RLHF-PPO 训练日志纳入仓库 ---
+# 说明：覆盖上方「日志与训练产物目录」段落中的 log/ 与 *.log 通用排除规则。
+# 仅放行该目录下的日志文件，保证仓库内路径与本地工程结构一致。
+!/Step7RL/7.post_train-stage/rlhf-ppo/log/
+!/Step7RL/7.post_train-stage/rlhf-ppo/log/*.log
