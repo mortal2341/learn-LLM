@@ -122,7 +122,9 @@ args = TrainingArguments(
     save_steps=500,
     save_total_limit=3,
     learning_rate=1e-4,
-    label_names=["labels"]
+    label_names=["labels"],
+    # 通过环境变量 DS_CONFIG 指定 DeepSpeed 配置；不设置时保持原有纯 DDP 行为
+    deepspeed=os.environ.get("DS_CONFIG") or None,
 )
 
 model = get_peft_model(model, config)
